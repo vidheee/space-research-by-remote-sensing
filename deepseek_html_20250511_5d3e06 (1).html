@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space for Everyone - Vidhee | Remote Sensing & Space Research</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Styles */
+        :root {
+            --primary-color: #0b3d91;
+            --secondary-color: #fc3d21;
+            --dark-color: #1a1a2e;
+            --light-color: #f4f4f9;
+            --accent-color: #4cc9f0;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #fff;
+            --black: #000;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Remote Sensing Section */
+        .remote-sensing {
+            background-color: var(--white);
+        }
+
+        .sensing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .sensing-card {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .sensing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .sensing-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .sensing-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .sensing-details {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .sensing-details h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .sensing-details ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sensing-details ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Space Research Section */
+        .research-tabs {
+            margin-bottom: 3rem;
+        }
+
+        .tab-header {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            background: #eee;
+            margin-right: 0.5rem;
+            border-radius: 5px 5px 0 0;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .tab-pane {
+            display: none;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 0 5px 5px 5px;
+            box-shadow: var(--shadow);
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .mission-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mission-timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .mission {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .mission::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: var(--white);
+            border: 4px solid var(--secondary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--primary-color);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--primary-color);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--primary-color);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--primary-color) transparent transparent;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .mission-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+        }
+
+        .mission-date {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .left .mission-date {
+            right: -100px;
+        }
+
+        .right .mission-date {
+            left: -100px;
+        }
+
+        /* Resources Section */
+        .resource-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .category h3 i {
+            margin-right: 10px;
+        }
+
+        .category ul {
+            list-style-position: inside;
+        }
+
+        .category ul li {
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .data-portals {
+            text-align: center;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .portal {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-weight: 600;
+            box-shadow: var(--shadow);
+        }
+
+        .portal:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+
+        .contact-info {
+            padding-right: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 3rem 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            color: #aaa;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #aaa;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .newsletter-form button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 1rem;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .mission-timeline::after {
+                left: 31px;
+            }
+            
+            .mission {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .mission::before {
+                left: 60px;
+                border: medium solid var(--primary-color);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--primary-color) transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .left .mission-date, .right .mission-date {
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark-color);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 2rem;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+            
+            .tab-header {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+                border-radius: 5px;
+            }
+            
+            .tab-btn.active {
+                border-radius: 5px;
+            }
+            
+            .tab-pane {
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span class="highlight">Space</span> for Everyone - Vidhee</h1>
+                <p>Exploring the cosmos through remote sensing</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#remote-sensing">Remote Sensing</a></li>
+                    <li><a href="#space-research">Space Research</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Discover the Universe Through Remote Sensing</h2>
+            <p>Learn how space technology helps us understand Earth and beyond</p>
+            <a href="#remote-sensing" class="btn">Explore Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Space for Everyone - Vidhee</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to "Space for Everyone - Vidhee", a platform dedicated to making space science and remote sensing accessible to all. Our mission is to educate and inspire people about the incredible advancements in space research and Earth observation technologies.</p>
+                    <p>Founded with the vision of democratizing space knowledge, we provide comprehensive resources, tutorials, and the latest updates in the field of remote sensing and space exploration.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Space image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="remote-sensing" class="remote-sensing">
+        <div class="container">
+            <h2>Remote Sensing</h2>
+            <div class="sensing-grid">
+                <div class="sensing-card">
+                    <i class="fas fa-satellite"></i>
+                    <h3>What is Remote Sensing?</h3>
+                    <p>The science of obtaining information about objects or areas from a distance, typically from aircraft or satellites.</p>
+                </div>
+                <div class="sensing-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Types of Sensors</h3>
+                    <p>Learn about optical, thermal, and microwave sensors and their applications in Earth observation.</p>
+                </div>
+                <div class="sensing-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analysis</h3>
+                    <p>Techniques for processing and interpreting remote sensing data for various applications.</p>
+                </div>
+                <div class="sensing-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Applications</h3>
+                    <p>From agriculture to disaster management, discover how remote sensing benefits society.</p>
+                </div>
+            </div>
+            <div class="sensing-details">
+                <h3>Remote Sensing Process</h3>
+                <ol>
+                    <li>Energy Source or Illumination</li>
+                    <li>Radiation and the Atmosphere</li>
+                    <li>Interaction with the Target</li>
+                    <li>Recording of Energy by the Sensor</li>
+                    <li>Transmission, Reception, and Processing</li>
+                    <li>Interpretation and Analysis</li>
+                    <li>Application</li>
+                </ol>
+                <p>Remote sensing plays a crucial role in monitoring climate change, urban planning, forestry, water resources, and many other fields that affect our daily lives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="space-research" class="space-research">
+        <div class="container">
+            <h2>Space Research</h2>
+            <div class="research-tabs">
+                <div class="tab-header">
+                    <div class="tab-btn active" data-tab="planetary">Planetary Science</div>
+                    <div class="tab-btn" data-tab="astrophysics">Astrophysics</div>
+                    <div class="tab-btn" data-tab="technology">Space Technology</div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="planetary">
+                        <h3>Exploring Our Solar System</h3>
+                        <p>Planetary science is the scientific study of planets, moons, and planetary systems, both in our own solar system and in others. It includes understanding the formation, evolution, and current state of these celestial bodies.</p>
+                        <p>Recent missions like NASA's Perseverance rover on Mars, ESA's Rosetta mission to comet 67P, and ISRO's Chandrayaan missions to the Moon have revolutionized our understanding of planetary bodies.</p>
+                    </div>
+                    <div class="tab-pane" id="astrophysics">
+                        <h3>Understanding the Universe</h3>
+                        <p>Astrophysics seeks to understand the universe and our place in it. It studies the physics of celestial objects and phenomena including stars, galaxies, black holes, and the cosmic microwave background.</p>
+                        <p>Breakthroughs like the detection of gravitational waves, imaging of black holes, and discoveries of exoplanets have opened new frontiers in our cosmic understanding.</p>
+                    </div>
+                    <div class="tab-pane" id="technology">
+                        <h3>Advancing Space Technology</h3>
+                        <p>Space technology encompasses spacecraft, satellites, space stations, and support infrastructure, equipment, and procedures. It's essential for space exploration, Earth observation, telecommunications, and more.</p>
+                        <p>Innovations like reusable rockets, small satellites, and advanced propulsion systems are making space more accessible than ever before.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="missions">
+                <h3>Notable Space Missions</h3>
+                <div class="mission-timeline">
+                    <div class="mission">
+                        <div class="mission-date">1957</div>
+                        <div class="mission-content">
+                            <h4>Sputnik 1</h4>
+                            <p>The first artificial Earth satellite launched by the Soviet Union, marking the beginning of the space age.</p>
+                        </div>
+                    </div>
+                    <div class="mission">
+                        <div class="mission-date">1969</div>
+                        <div class="mission-content">
+                            <h4>Apollo 11</h4>
+                            <p>The first manned mission to land on the Moon, with Neil Armstrong and Buzz Aldrin becoming the first humans to walk on the lunar surface.</p>
+                        </div>
+                    </div>
+                    <div class="mission">
+                        <div class="mission-date">1990</div>
+                        <div class="mission-content">
+                            <h4>Hubble Space Telescope</h4>
+                            <p>Launched into low Earth orbit, Hubble has provided some of the most detailed images of distant galaxies and nebulae.</p>
+                        </div>
+                    </div>
+                    <div class="mission">
+                        <div class="mission-date">2021</div>
+                        <div class="mission-content">
+                            <h4>James Webb Space Telescope</h4>
+                            <p>The most powerful space telescope ever built, designed to study every phase in the history of our Universe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2>Learning Resources</h2>
+            <div class="resource-categories">
+                <div class="category">
+                    <h3><i class="fas fa-book"></i> Books</h3>
+                    <ul>
+                        <li>"Remote Sensing of the Environment" by John R. Jensen</li>
+                        <li>"Introduction to Remote Sensing" by James B. Campbell</li>
+                        <li>"Fundamentals of Space Systems" by Vincent L. Pisacane</li>
+                        <li>"Astrophysics for People in a Hurry" by Neil deGrasse Tyson</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3><i class="fas fa-graduation-cap"></i> Online Courses</h3>
+                    <ul>
+                        <li>Coursera: "Remote Sensing Image Acquisition, Analysis and Applications"</li>
+                        <li>edX: "Introduction to Astrophysics"</li>
+                        <li>Udemy: "GIS and Remote Sensing with ArcGIS and QGIS"</li>
+                        <li>ISRO's "Remote Sensing and GIS" online program</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3><i class="fas fa-laptop-code"></i> Software Tools</h3>
+                    <ul>
+                        <li>QGIS - Open Source GIS software</li>
+                        <li>ENVI - Remote sensing software</li>
+                        <li>Google Earth Engine - Cloud-based geospatial analysis</li>
+                        <li>Stellarium - Open source planetarium software</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3><i class="fas fa-newspaper"></i> Journals & Publications</h3>
+                    <ul>
+                        <li>Remote Sensing of Environment</li>
+                        <li>International Journal of Remote Sensing</li>
+                        <li>Journal of Geophysical Research: Planets</li>
+                        <li>The Astrophysical Journal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="data-portals">
+                <h3>Open Data Portals</h3>
+                <p>Access free remote sensing data from these platforms:</p>
+                <div class="portal-grid">
+                    <a href="https://earthexplorer.usgs.gov/" target="_blank" class="portal">USGS EarthExplorer</a>
+                    <a href="https://earthdata.nasa.gov/" target="_blank" class="portal">NASA EarthData</a>
+                    <a href="https://scihub.copernicus.eu/" target="_blank" class="portal">Copernicus Open Access Hub</a>
+                    <a href="https://bhuvan.nrsc.gov.in/" target="_blank" class="portal">ISRO's Bhuvan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions about remote sensing or space research? Want to collaborate or suggest improvements? We'd love to hear from you!</p>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@spaceforeveryone-vidhee.org</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Space Avenue, Cosmos City, Earth</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Space for Everyone - Vidhee</h3>
+                    <p>Making space science and remote sensing accessible to all through education and resources.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#remote-sensing">Remote Sensing</a></li>
+                        <li><a href="#space-research">Space Research</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates in space research.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 Space for Everyone - Vidhee. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    nav.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Tab Functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and panes
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Sticky Header on Scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                header.classList.toggle('sticky', window.scrollY > 0);
+            });
+            
+            // Form Submission
+            const contactForm = document.querySelector('.contact-form form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = this.querySelector('input[type="text"]').value;
+                    const email = this.querySelector('input[type="email"]').value;
+                    const subject = this.querySelector('input[type="text"]:nth-of-type(2)').value;
+                    const message = this.querySelector('textarea').value;
+                    
+                    // Here you would typically send the data to a server
+                    console.log('Form submitted:', { name, email, subject, message });
+                    
+                    // Show success message
+                    alert('Thank you for your message! We will get back to you soon.');
+                    
+                    // Reset form
+                    this.reset();
+                });
+            }
+            
+            // Newsletter Form Submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    // Here you would typically send the email to your newsletter service
+                    console.log('Newsletter subscription:', email);
+                    
+                    // Show success message
+                    alert('Thank you for subscribing to our newsletter!');
+                    
+                    // Reset form
+                    this.reset();
+                });
+            }
+            
+            // Animate elements on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.sensing-card, .mission, .category, .portal');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animated elements
+            document.querySelectorAll('.sensing-card, .mission, .category, .portal').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Run animation check on load and scroll
+            window.addEventListener('load', animateOnScroll);
+            window.addEventListener('scroll', animateOnScroll);
+        });
+   
